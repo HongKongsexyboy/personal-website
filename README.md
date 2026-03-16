@@ -1,5 +1,5 @@
 # 我的博客
-
+测试版模板
 个人网站工作区，当前已按约定的 monorepo 目录结构初始化，并补好了围绕 Home、Projects、Blog、About、Contact、SEO、Analytics、Platform 的开发骨架。
 
 ## 目录概览
