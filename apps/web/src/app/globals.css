@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    --background: 32 43% 96%;
+    --foreground: 24 24% 12%;
+    --card: 32 56% 98%;
+    --card-foreground: 24 24% 12%;
+    --popover: 32 56% 98%;
+    --popover-foreground: 24 24% 12%;
+    --primary: 18 70% 48%;
+    --primary-foreground: 36 100% 97%;
+    --secondary: 37 33% 91%;
+    --secondary-foreground: 24 18% 16%;
+    --muted: 32 28% 90%;
+    --muted-foreground: 24 12% 40%;
+    --accent: 149 23% 86%;
+    --accent-foreground: 156 28% 24%;
+    --destructive: 0 70% 52%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 26 22% 82%;
+    --input: 26 22% 82%;
+    --ring: 18 70% 48%;
+    --radius: 1.5rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-section: clamp(3.5rem, 7vw, 6rem);
+    --space-page: clamp(4.5rem, 8vw, 7rem);
+  }
+
+  .dark {
+    --background: 24 16% 9%;
+    --foreground: 32 42% 95%;
+    --card: 25 18% 12%;
+    --card-foreground: 32 42% 95%;
+    --popover: 25 18% 12%;
+    --popover-foreground: 32 42% 95%;
+    --primary: 19 86% 60%;
+    --primary-foreground: 24 22% 10%;
+    --secondary: 23 16% 16%;
+    --secondary-foreground: 32 42% 95%;
+    --muted: 23 14% 15%;
+    --muted-foreground: 28 16% 70%;
+    --accent: 156 24% 21%;
+    --accent-foreground: 150 36% 84%;
+    --destructive: 0 68% 47%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 23 12% 23%;
+    --input: 23 12% 23%;
+    --ring: 19 86% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-w-[320px] bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--primary) / 0.16), transparent 28%),
+      radial-gradient(circle at top right, hsl(var(--accent-foreground) / 0.16), transparent 22%),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary) / 0.55) 100%);
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.24em] text-primary/90;
+  }
+
+  .display-title {
+    @apply font-display text-hero;
+  }
+
+  .section-title {
+    @apply font-display text-title;
+  }
+
+  .body-copy {
+    @apply text-body text-muted-foreground;
+  }
+
+  .token-chip {
+    @apply inline-flex items-center rounded-full border border-border/70 bg-secondary/80 px-3 py-1 text-sm font-medium text-secondary-foreground;
+  }
+
+  .hero-grid {
+    @apply grid items-start gap-6 lg:grid-cols-[1.25fr_0.75fr];
+  }
+}
