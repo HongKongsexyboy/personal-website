@@ -18,7 +18,7 @@ type NavbarProps = {
   className?: string;
 };
 
-export function Navbar({ brand = "我的博客", className }: NavbarProps) {
+export function Navbar({ brand = "个人博客", className }: NavbarProps) {
   return (
     <header
       className={cn(
