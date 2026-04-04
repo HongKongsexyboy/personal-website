@@ -25,17 +25,17 @@ export function Section({
   ...props
 }: SectionProps) {
   return (
-    <section className={cn("py-space-section", className)} {...props}>
+    <section className={cn("py-10 sm:py-14 lg:py-space-section", className)} {...props}>
       <Container size={containerSize}>
-        <div className={cn("space-y-8", contentClassName)}>
+        <div className={cn("space-y-6 sm:space-y-8", contentClassName)}>
           {(eyebrow || title || description || actions) && (
-            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-              <div className="max-w-3xl space-y-3">
+            <div className="flex flex-col gap-4 sm:gap-5 md:flex-row md:items-end md:justify-between">
+              <div className="min-w-0 max-w-3xl space-y-3">
                 {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
                 {title ? <h2 className="section-title">{title}</h2> : null}
                 {description ? <p className="body-copy">{description}</p> : null}
               </div>
-              {actions ? <div className="flex flex-wrap gap-3">{actions}</div> : null}
+              {actions ? <div className="flex flex-wrap gap-3 max-sm:w-full">{actions}</div> : null}
             </div>
           )}
           {children}

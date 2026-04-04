@@ -44,17 +44,18 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
   }
 
   return (
-    <article className="pb-space-page">
+    <article className="overflow-x-hidden pb-space-page">
       <Section
         eyebrow={`${post.category} / ${formatDate(post.publishedAt)} / ${post.readingTime}`}
         title={post.title}
         description={post.summary}
+        containerSize="narrow"
       >
-        <Link className={cn(buttonVariants({ variant: "ghost" }), "w-fit")} href="/blog">
+        <Link className={cn(buttonVariants({ variant: "ghost" }), "w-full sm:w-fit")} href="/blog">
           返回文章列表
         </Link>
         <Card>
-          <CardContent className="pt-7">
+          <CardContent className="pt-5 sm:pt-7">
             <p className="body-copy">
               这里预留给后续 Markdown 或 MDX 内容渲染。当前先把信息架构、SEO、Design System 和动态路由打通。
             </p>

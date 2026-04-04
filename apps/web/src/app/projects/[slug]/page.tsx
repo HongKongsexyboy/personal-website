@@ -43,18 +43,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <div className="pb-space-page">
+    <div className="overflow-x-hidden pb-space-page">
       <Section
         eyebrow={`Project / ${project.year} / ${project.status}`}
         title={project.title}
         description={project.tagline}
         actions={
-          <Link className={cn(buttonVariants({ variant: "ghost" }))} href="/projects">
+          <Link className={cn(buttonVariants({ variant: "ghost" }), "max-sm:w-full sm:w-auto")} href="/projects">
             返回项目列表
           </Link>
         }
       >
-        <p className="body-copy max-w-3xl">{project.summary}</p>
+        <p className="body-copy">{project.summary}</p>
 
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
@@ -64,8 +64,8 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           ))}
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-2">
-          <Card>
+        <div className="grid gap-4 sm:gap-5 lg:grid-cols-2">
+          <Card className="h-full">
             <CardHeader>
               <CardTitle>项目背景</CardTitle>
             </CardHeader>
@@ -78,13 +78,13 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="h-full">
             <CardHeader>
               <CardTitle>我的职责</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {project.responsibilities.map((item) => (
-                <div key={item} className="rounded-2xl border border-border/70 bg-background/40 p-4 text-sm text-muted-foreground">
+                <div key={item} className="rounded-2xl border border-border/70 bg-background/40 p-4 text-sm leading-7 text-muted-foreground">
                   {item}
                 </div>
               ))}
@@ -113,8 +113,8 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </CardHeader>
           <CardContent className="grid gap-4">
             {project.challenges.map((challenge) => (
-              <div key={challenge.title} className="rounded-2xl border border-border/70 bg-background/40 p-5">
-                <h3 className="text-lg font-semibold">{challenge.title}</h3>
+              <div key={challenge.title} className="rounded-2xl border border-border/70 bg-background/40 p-4 sm:p-5">
+                <h3 className="break-words text-base font-semibold sm:text-lg">{challenge.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   <span className="font-semibold text-foreground">问题：</span>
                   {challenge.problem}
@@ -133,27 +133,27 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             <CardTitle>截图区域</CardTitle>
             <CardDescription>当前保留为截图占位区，后续可替换为真实项目界面、流程图或性能对比图。</CardDescription>
           </CardHeader>
-          <CardContent className="grid gap-4 md:grid-cols-2">
+          <CardContent className="grid gap-4 sm:grid-cols-2">
             {project.screenshots.map((item) => (
               <div
                 key={item.title}
-                className="flex min-h-56 flex-col justify-end rounded-3xl border border-dashed border-border bg-secondary/40 p-5"
+                className="flex min-h-44 flex-col justify-end rounded-3xl border border-dashed border-border bg-secondary/40 p-4 sm:min-h-52 sm:p-5"
               >
-                <p className="font-semibold">{item.title}</p>
+                <p className="break-words font-semibold">{item.title}</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </CardContent>
         </Card>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           {project.githubUrl ? (
-            <Link className={cn(buttonVariants())} href={project.githubUrl}>
+            <Link className={cn(buttonVariants(), "w-full sm:w-auto")} href={project.githubUrl}>
               GitHub
             </Link>
           ) : null}
           {project.demoUrl ? (
-            <Link className={cn(buttonVariants({ variant: "secondary" }))} href={project.demoUrl}>
+            <Link className={cn(buttonVariants({ variant: "secondary" }), "w-full sm:w-auto")} href={project.demoUrl}>
               Demo
             </Link>
           ) : null}

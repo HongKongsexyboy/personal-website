@@ -15,7 +15,7 @@ function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
 }
 
 function CardHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("flex flex-col gap-3 p-6 md:p-7", className)} {...props} />;
+  return <div className={cn("flex min-w-0 flex-col gap-3 p-5 sm:p-6 md:p-7", className)} {...props} />;
 }
 
 function CardTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) {
@@ -32,7 +32,7 @@ function CardDescription({ className, ...props }: HTMLAttributes<HTMLParagraphEl
 }
 
 function CardContent({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("px-6 pb-6 md:px-7 md:pb-7", className)} {...props} />;
+  return <div className={cn("min-w-0 px-5 pb-5 sm:px-6 sm:pb-6 md:px-7 md:pb-7", className)} {...props} />;
 }
 
 function CardFooter({ className, ...props }: HTMLAttributes<HTMLDivElement>) {

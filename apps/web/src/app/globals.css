@@ -66,7 +66,7 @@
   }
 
   body {
-    @apply min-w-[320px] bg-background text-foreground antialiased;
+    @apply min-w-[320px] overflow-x-hidden bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
     background-image:
       radial-gradient(circle at top left, hsl(var(--primary) / 0.16), transparent 28%),
@@ -85,22 +85,22 @@
   }
 
   .display-title {
-    @apply font-display text-hero;
+    @apply font-display text-[clamp(2.5rem,12vw,6.25rem)] leading-[0.94] tracking-[-0.045em] sm:text-hero;
   }
 
   .section-title {
-    @apply font-display text-title;
+    @apply break-words font-display text-[clamp(1.8rem,8vw,3.25rem)] leading-[1.02] tracking-[-0.03em] sm:text-title;
   }
 
   .body-copy {
-    @apply text-body text-muted-foreground;
+    @apply max-w-[68ch] text-[0.98rem] leading-7 text-muted-foreground sm:text-body;
   }
 
   .token-chip {
-    @apply inline-flex items-center rounded-full border border-border/70 bg-secondary/80 px-3 py-1 text-sm font-medium text-secondary-foreground;
+    @apply inline-flex max-w-full items-center rounded-full border border-border/70 bg-secondary/80 px-3 py-1 text-xs font-medium text-secondary-foreground sm:text-sm;
   }
 
   .hero-grid {
-    @apply grid items-start gap-6 lg:grid-cols-[1.25fr_0.75fr];
+    @apply grid items-start gap-5 sm:gap-6 lg:grid-cols-[1.25fr_0.75fr];
   }
 }
